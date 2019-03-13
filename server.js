@@ -35,14 +35,14 @@ app.use(
 app.use(
   `/api/bookingInfo/`,
   proxy({
-    target: `http://ec2-54-245-154-37.us-west-2.compute.amazonaws.com:3002`, changeOrigin: true
+    target: `http://ec2-54-245-154-37.us-west-2.compute.amazonaws.com`, changeOrigin: true
   })
 )
 
 app.use(
   `/api/bookings/`,
   proxy({
-    target: `http://ec2-54-245-154-37.us-west-2.compute.amazonaws.com:3002`, changeOrigin: true
+    target: `http://ec2-54-245-154-37.us-west-2.compute.amazonaws.com`, changeOrigin: true
   })
 )
 
