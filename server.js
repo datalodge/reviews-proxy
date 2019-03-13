@@ -39,10 +39,18 @@ app.use(
   })
 )
 
+app.use(
+  `/api/bookings/`,
+  proxy({
+    target: `http://ec2-54-245-154-37.us-west-2.compute.amazonaws.com:3002`, changeOrigin: true
+  })
+)
+
 app.use(`/api/amenities`, proxy({
   target: `http://ec2-3-82-148-29.compute-1.amazonaws.com`,
   changeOrigin: true
 }))
+
 app.use('/', express.static(__dirname + '/public'));
 
 app.listen(port, () => {
